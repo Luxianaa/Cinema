@@ -1,0 +1,140 @@
+/* Estilo para el fondo de la página */
+body {
+    background-color: #000; /* Fondo negro */
+    color: #fff; /* Texto blanco para mejor legibilidad */
+    font-family: 'Google Sans', sans-serif; /* Fuente Google Sans */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Estilos para los botones */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #370343;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #41166c;
+}
+
+/* Estilos para la lista horizontal */
+.horizontal-list {
+    list-style-type: none; /* Elimina los puntos de la lista */
+    padding: 0;
+    margin: 0;
+    display: flex; /* Utiliza flexbox para alinear los elementos en una fila */
+    justify-content: center; /* Centra los elementos horizontalmente */
+}
+
+.horizontal-list li {
+    margin-right: 20px; /* Espacio entre los elementos de la lista */
+    text-align: center; /* Centrar el texto y la imagen */
+}
+
+.horizontal-list img.thumbnail {
+    width: 100px; /* Ancho de las miniaturas */
+    height: auto;
+    margin-top: 10px; /* Espacio entre el texto y la imagen */
+    transition: transform 0.3s ease; /* Transición suave para el efecto de hover */
+}
+
+.horizontal-list img.thumbnail:hover {
+    transform: scale(1.2); /* Aumenta el tamaño de la imagen al pasar el cursor */
+}
+
+.horizontal-list a {
+    color: #fff; /* Color del texto del enlace */
+    text-decoration: none; /* Sin subrayado */
+}
+
+.horizontal-list a:hover {
+    text-decoration: underline; /* Subrayado al pasar el cursor */
+}
+
+/* Estilos para el carrusel */
+.carousel {
+    position: relative;
+    width: 80%;
+    overflow: hidden;
+    margin: 20px auto;
+}
+
+.carousel-inner {
+    display: flex;
+    width: 100%;
+    animation: slide 20s infinite;
+}
+
+.carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    position: relative; /* Necesario para posicionar el texto de información */
+}
+
+.carousel-item img {
+    width: 20%; /* Ajusta el ancho de las imágenes del carrusel */
+    height: auto; /* Mantiene la proporción de las imágenes */
+    transition: transform 0.3s ease; /* Transición suave para el efecto de hover */
+}
+
+.carousel-item img:hover {
+    transform: scale(1.2); /* Aumenta el tamaño de la imagen al pasar el cursor */
+}
+
+/* Estilos para el texto de información */
+.carousel-item .info {
+    display: none; /* Oculta el texto de información por defecto */
+    position: absolute;
+    top: 50%; /* Posiciona el texto verticalmente en el centro de la imagen */
+    left: 70%; /* Posiciona el texto a la derecha de la imagen */
+    transform: translateY(-50%) scale(0.8); /* Inicialmente invisible y reducido */
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo semitransparente */
+    color: #fff; /* Color del texto */
+    padding: 10px;
+    border-radius: 5px;
+    width: 200px; /* Ancho del cuadro de información */
+    opacity: 0; /* Inicialmente invisible */
+    transition: opacity 1s ease, transform 1s ease; /* Transición suave para la animación */
+}
+
+.carousel-item:hover .info {
+    display: block; /* Muestra el texto de información al pasar el cursor */
+    opacity: 1; /* Hace visible el texto */
+    transform: translateY(-50%) scale(1); /* Expande el texto a su tamaño original */
+}
+
+/* Estilos específicos para el título, director y sinopsis */
+.carousel-item .info .titulo {
+    font-size: 1.2em; /* Tamaño de fuente más grande para el título */
+    margin-bottom: 5px;
+}
+
+.carousel-item .info .director {
+    font-size: 1em; /* Tamaño de fuente más pequeño para el director */
+    margin-bottom: 5px;
+}
+
+.carousel-item .info .sinopsis {
+    font-size: 0.9em; /* Tamaño de fuente más pequeño para la sinopsis */
+}
+
+@keyframes slide {
+    0% { transform: translateX(0%); }
+    14.28% { transform: translateX(0%); }
+    28.56% { transform: translateX(-100%); }
+    42.84% { transform: translateX(-100%); }
+    57.12% { transform: translateX(-200%); }
+    71.40% { transform: translateX(-200%); }
+    85.68% { transform: translateX(-300%); }
+    100% { transform: translateX(-300%); }
+}
